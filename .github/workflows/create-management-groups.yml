@@ -21,9 +21,18 @@ jobs:
           allow-no-subscriptions: true
           enable-AzPSSession: true
       
-      - name: Reading all MGs
-        uses: azure/powershell@v1
+      - uses: azure/powershell@v1
+        name: Reading all MGs
         with:
           inlineScript: |
             Get-AzManagementGroup
           azPSVersion: "latest"
+
+      - uses: azure/arm-deploy@v1
+        name: Deploy the management groups
+        id: management-groups
+        with:
+          scope: tenant
+          region: westeurope
+          template: arm-templates/management-group.template.json
+          #parameters: arm-templates/management-group.params.json
