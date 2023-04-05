@@ -28,11 +28,9 @@ jobs:
             Get-AzManagementGroup
           azPSVersion: "latest"
 
-      - uses: azure/arm-deploy@v1
-        name: Deploy the management groups
-        id: management-groups
+      - uses: azure/powershell@v1
+        name: Performing a tenant deployment
         with:
-          scope: managementgroup
-          region: westeurope
-          template: arm-templates/management-group.template.json
-          #parameters: arm-templates/management-group.params.json
+          inlineScript: |
+            New-AzTenantDeployment -Location "westeurope" -TemplateFile "arm-templates/management-group.template.json"
+          azPSVersion: "latest"
