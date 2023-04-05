@@ -32,5 +32,7 @@ jobs:
         name: Performing a tenant deployment
         with:
           inlineScript: |
-            New-AzTenantDeployment -Location "westeurope" -TemplateFile "arm-templates/management-group.template.json"
+            errorActionPreference = 'silentlycontinue'
+            New-AzManagementGroup -GroupName "1417" -DisplayName "1417" -ParentId '/providers/Microsoft.Management/managementGroups/df060b50-2b2b-4a50-a821-bfe5446295cc'
+            errorActionPreference = 'stop'
           azPSVersion: "latest"
