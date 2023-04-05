@@ -20,3 +20,10 @@ jobs:
           client-id: ${{ secrets.CLIENT_ID }}
           allow-no-subscriptions: true
           enable-AzPSSession: true
+      
+      - name: Reading all MGs
+        uses: azure/powershell@v1
+        with:
+          inlineScript: |
+            Get-AzManagementGroup
+          azPSVersion: "latest"
