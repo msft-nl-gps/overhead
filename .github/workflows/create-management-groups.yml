@@ -32,13 +32,14 @@ jobs:
         name: Creating a new MG
         with:
           inlineScript: |
-            New-AzManagementGroup -GroupName (Get-Date -format yyyyMMddhhmm) -DisplayName (Get-Date -format yyyyMMddhhmm) -ParentId '/providers/Microsoft.Management/managementGroups/${{ secrets.TOP_MANAGEMENT_GROUP_ID}}' -ErrorAction SilentlyContinue     
+            New-AzManagementGroup -GroupName (Get-Date -format yyyyMMddhhmm) -DisplayName (Get-Date -format yyyyMMddhhmm) -ParentId '/providers/Microsoft.Management/managementGroups/${{ secrets.TOP_MANAGEMENT_GROUP_ID}}' #-ErrorAction SilentlyContinue     
           azPSVersion: "latest"
 
       - uses: azure/powershell@v1
         name: Re-Reading all MGs
         with:
           inlineScript: |
+            Start-Sleep 10
             Get-AzManagementGroup -GroupName ${{ secrets.TOP_MANAGEMENT_GROUP_ID}} -Expand -Recurse
           azPSVersion: "latest"
   
