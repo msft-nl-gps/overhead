@@ -25,14 +25,20 @@ jobs:
         name: Reading all MGs
         with:
           inlineScript: |
-            Get-AzManagementGroup
+            Get-AzManagementGroup -GroupName ${{ secrets.TOP_MANAGEMENT_GROUP_ID}} -Expand -Recurse
           azPSVersion: "latest"
 
       - uses: azure/powershell@v1
-        name: Performing a tenant deployment
+        name: Creating a new MG
         with:
           inlineScript: |
-            $errorActionPreference = 'silentlycontinue'
-            New-AzManagementGroup -GroupName "1417" -DisplayName "1417" -ParentId '/providers/Microsoft.Management/managementGroups/df060b50-2b2b-4a50-a821-bfe5446295cc'
-            $errorActionPreference = 'stop'
+            New-AzManagementGroup -GroupName (Get-Date -format yyyyMMddhhmm) -DisplayName (Get-Date -format yyyyMMddhhmm) -ParentId '/providers/Microsoft.Management/managementGroups/${{ secrets.TOP_MANAGEMENT_GROUP_ID}}' -ErrorAction SilentlyContinue     
           azPSVersion: "latest"
+
+      - uses: azure/powershell@v1
+        name: Re-Reading all MGs
+        with:
+          inlineScript: |
+            Get-AzManagementGroup -GroupName ${{ secrets.TOP_MANAGEMENT_GROUP_ID}} -Expand -Recurse
+          azPSVersion: "latest"
+  
