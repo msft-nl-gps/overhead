@@ -25,6 +25,8 @@ jobs:
         name: Reading all MGs
         with:
           inlineScript: |
+            Install-Module -Name Az -AllowClobber -Force -Scope CurrentUser -Repository PSGallery -MinimumVersion '9.6.0'
+            Import-Module Az -MinimumVersion '9.6.0'
             Get-AzManagementGroup -GroupName ${{ secrets.TOP_MANAGEMENT_GROUP_ID}} -Expand -Recurse
           azPSVersion: "latest"
 
@@ -32,9 +34,8 @@ jobs:
         name: Creating a new MG
         with:
           inlineScript: |
-            Install-Module -Name Az -AllowClobber -Force -Scope CurrentUser -Repository PSGallery -MinimumVersion '9.6.0'
-            Import-Module Az -MinimumVersion '9.6.0'
             Get-Module Az -ListAvailable
+            Import-Module Az -MinimumVersion '9.6.0'
             New-AzManagementGroup -GroupName (Get-Date -format yyyyMMddhhmm) -DisplayName (Get-Date -format yyyyMMddhhmm) -ParentId '/providers/Microsoft.Management/managementGroups/${{ secrets.TOP_MANAGEMENT_GROUP_ID}}' #-ErrorAction SilentlyContinue     
           azPSVersion: "latest"
 
@@ -42,7 +43,7 @@ jobs:
         name: Re-Reading all MGs
         with:
           inlineScript: |
-            Start-Sleep 10
+            Import-Module Az -MinimumVersion '9.6.0'
             Get-AzManagementGroup -GroupName ${{ secrets.TOP_MANAGEMENT_GROUP_ID}} -Expand -Recurse
           azPSVersion: "latest"
   
