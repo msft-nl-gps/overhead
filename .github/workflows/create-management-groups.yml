@@ -33,6 +33,7 @@ jobs:
         name: Creating a new MG
         with:
           inlineScript: |
+            Import-Module Az -MinimumVersion '9.6.0'
             New-AzManagementGroup -GroupName (Get-Date -format yyyyMMddhhmm) -DisplayName (Get-Date -format yyyyMMddhhmm) -ParentId '/providers/Microsoft.Management/managementGroups/${{ secrets.TOP_MANAGEMENT_GROUP_ID}}' #-ErrorAction SilentlyContinue     
           azPSVersion: "latest"
 
