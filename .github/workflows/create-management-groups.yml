@@ -25,6 +25,7 @@ jobs:
         name: Reading all MGs
         with:
           inlineScript: |
+            Update-Module Az -RequiredVersion '9.6.0'
             Get-AzManagementGroup -GroupName ${{ secrets.TOP_MANAGEMENT_GROUP_ID}} -Expand -Recurse
           azPSVersion: "latest"
 
