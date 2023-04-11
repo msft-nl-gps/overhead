@@ -53,4 +53,6 @@ if ($null -ne $TopManagementGroupId) {
     }
 }
 
-Add-Content -Path $env:GITHUB_OUTPUT -Value "TopManagementGroupId=$global:TopManagementGroupId"
+
+Write-Output "TopManagementGroupId=$($global:TopManagementGroupId)" >> $Env:GITHUB_OUTPUT
+Get-content $Env:GITHUB_OUTPUT
