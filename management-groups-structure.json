@@ -1,0 +1,77 @@
+{
+    "id": "cb7f553b-3d0c-4069-84f0-542fed44e967",
+    "type": "managementGroup",
+    "name": "Hackahooha",
+    "children": [
+        {
+            "id": "78140d7b-fdb4-4294-b607-f7e4721f57cf",
+            "type": "managementGroup",
+            "name": "Platform",
+            "children": [
+                {
+                    "id": "5cebbee1-e606-43ce-b321-66b82c582323",
+                    "type": "managementGroup",
+                    "name": "Connectivity",
+                    "children": [
+                        {
+                            "id": "9db82939-22df-4342-9c3a-39ea0c8cbcdd",
+                            "type": "subscription",
+                            "name": "Connectivity"
+                        }
+                    ]
+                },
+                {
+                    "id": "6e6a80d7-fa2a-4dd3-82b9-580b35a54b3c",
+                    "type": "managementGroup",
+                    "name": "Identity",
+                    "children": [
+                        
+                    ]
+                },
+                {
+                    "id": "dd54e8e3-3fb5-40b3-9733-6b4461632b62",
+                    "type": "managementGroup",
+                    "name": "Management",
+                    "children": [
+                        {
+                            "id": "3ddd65eb-3b59-47a7-9b87-3e440fdd1106",
+                            "type": "subscription",
+                            "name": "Management"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "48465da0-81cb-4d03-893f-287a40da5f19",
+            "type": "managementGroup",
+            "name": "Landing Zones",
+            "children": [
+                {
+                    "id": "82ac341c-3505-4dbe-8541-a65036184d4b",
+                    "type": "managementGroup",
+                    "name": "Corp",
+                    "children": []
+                },
+                {
+                    "id": "8e6b5d76-23b9-4743-8d5f-8d5f46ac2473",
+                    "type": "managementGroup",
+                    "name": "Online",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "id": "d5af26f4-d7a6-4313-8d99-b808879036f7",
+            "type": "managementGroup",
+            "name": "Decommisioned",
+            "children": []
+        },
+        {
+            "id": "a2f00f22-8b9f-4d94-8112-b866f4e357d6",
+            "type": "managementGroup",
+            "name": "Sandbox",
+            "children": []
+        }
+    ]
+}
