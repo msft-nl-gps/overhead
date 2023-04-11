@@ -11,7 +11,16 @@ jobs:
       id-token: write
       contents: read
     outputs:
-      TopLevelManagementGroupId: ${{ steps.managementGroups.outputs.TopManagementGroupId }}
+      Platform_MG_Resource_Id: ${{ steps.managementGroups.outputs.Platform_MG_Resource_Id }}
+      Connectivity_MG_Resource_Id: ${{ steps.managementGroups.outputs.Connectivity_MG_Resource_Id }}
+      Identity_MG_Resource_Id: ${{ steps.managementGroups.outputs.Identity_MG_Resource_Id }}
+      Management_MG_Resource_Id: ${{ steps.managementGroups.outputs.Management_MG_Resource_Id }}
+      Landing_Zones_MG_Resource_Id: ${{ steps.managementGroups.outputs.Landing_Zones_MG_Resource_Id }}
+      Corp_MG_Resource_Id: ${{ steps.managementGroups.outputs.Corp_MG_Resource_Id }}
+      Online_MG_Resource_Id: ${{ steps.managementGroups.outputs.Online_MG_Resource_Id }}
+      Decommisioned_MG_Resource_Id: ${{ steps.managementGroups.outputs.Decommisioned_MG_Resource_Id }}
+      Sandbox_MG_Resource_Id: ${{ steps.managementGroups.outputs.Sandbox_MG_Resource_Id }}
+
     steps:
       - uses: actions/checkout@v2
       
@@ -62,6 +71,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: echo "TopLevelManagementGroupId $TopLevelManagementGroupId"
+      - run: echo "Platform_MG_Resource_Id $Platform_MG_Resource_Id"
         env:
-          TopLevelManagementGroupId: ${{needs.deploy-management-groups.outputs.TopLevelManagementGroupId}}
+          Platform_MG_Resource_Id: ${{needs.deploy-management-groups.outputs.Platform_MG_Resource_Id }}
+          Connectivity_MG_Resource_Id: ${{needs.deploy-management-groups.outputs.Connectivity_MG_Resource_Id }}
+          Identity_MG_Resource_Id: ${{needs.deploy-management-groups.outputs.Identity_MG_Resource_Id }}
+          Management_MG_Resource_Id: ${{needs.deploy-management-groups.outputs.Management_MG_Resource_Id }}
+          Landing_Zones_MG_Resource_Id: ${{needs.deploy-management-groups.outputs.Landing_Zones_MG_Resource_Id }}
+          Corp_MG_Resource_Id: ${{needs.deploy-management-groups.outputs.Corp_MG_Resource_Id }}
+          Online_MG_Resource_Id: ${{needs.deploy-management-groups.outputs.Online_MG_Resource_Id }}
+          Decommisioned_MG_Resource_Id: ${{needs.deploy-management-groups.outputs.Decommisioned_MG_Resource_Id }}
+          Sandbox_MG_Resource_Id: ${{needs.deploy-management-groups.outputs.Sandbox_MG_Resource_Id }}
