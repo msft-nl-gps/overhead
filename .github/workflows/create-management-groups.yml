@@ -10,6 +10,8 @@ jobs:
     permissions:
       id-token: write
       contents: read
+    outputs:
+      TopLevelManagementGroupId: ${{ steps.managementGroups.outputs.TopManagementGroupId }}
     steps:
       - uses: actions/checkout@v2
       
@@ -32,10 +34,16 @@ jobs:
 
       - shell: pwsh
         name: Processing Subscriptions and Management Groups
+        id: managementGroups
         run: |
           Get-Module Az -ListAvailable
           Import-Module Az -MinimumVersion '9.6.0'
           ./process-management-groups-structure.ps1
+      
+      - shell: pwsh
+        name: Read env variables
+        run: |
+          Get-ChildItem env: | fl
           
       - uses: azure/powershell@v1
         name: Re-Reading all MGs
@@ -45,3 +53,15 @@ jobs:
             Get-AzManagementGroup -GroupName ${{ secrets.TOP_MANAGEMENT_GROUP_ID}} -Expand -Recurse
           azPSVersion: "latest"
   
+  deploy-policy-definitions-and-assignments:
+    needs: deploy-management-groups
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: echo "TopLevelManagementGroupId $TopLevelManagementGroupId"
+        env:
+          TopLevelManagementGroupId: ${{needs.deploy-management-groups.outputs.TopLevelManagementGroupId}}
