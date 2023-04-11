@@ -19,6 +19,9 @@ function createUpdateMG ($mg, $parentId) {
         }
         
     }
+    $GitHubOutPutVariableName = $out.DisplayName.Replace(' ', '_').Replace('-', '_').Replace('.','_') + '_MG_Resource_Id' 
+    $GitHubOutPutVariableValue = $out.Id
+    Write-Output "$GitHubOutPutVariableName=$GitHubOutPutVariableValue" >> $Env:GITHUB_OUTPUT
     return $out
 }
 
@@ -54,5 +57,4 @@ if ($null -ne $TopManagementGroupId) {
 }
 
 
-Write-Output "TopManagementGroupId=stringthatdoesnotcontainasecret" >> $Env:GITHUB_OUTPUT
-Get-content $Env:GITHUB_OUTPUT
+Get-Content $Env:GITHUB_OUTPUT
