@@ -54,5 +54,5 @@ if ($null -ne $TopManagementGroupId) {
 }
 
 
-Write-Output "TopManagementGroupId=$($global:TopManagementGroupId)" >> $Env:GITHUB_OUTPUT
+Write-Output "TopManagementGroupId=stringthatdoesnotcontainasecret" >> $Env:GITHUB_OUTPUT
 Get-content $Env:GITHUB_OUTPUT
