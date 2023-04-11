@@ -53,4 +53,4 @@ if ($null -ne $TopManagementGroupId) {
     }
 }
 
-Write-Output "TopManagementGroupId=$global:TopManagementGroupId" -OutVariable GITHUB_OUTPUT
+Add-Content -Path $GITHUB_OUTPUT -Value "TopManagementGroupId=$global:TopManagementGroupId"
