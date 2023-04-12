@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy-management-groups:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux]
     permissions:
       id-token: write
       contents: read
