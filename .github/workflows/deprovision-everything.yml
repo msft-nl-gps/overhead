@@ -1,11 +1,9 @@
 name: Deprovision all the Azure Resources created during the Hackathon
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch:
 
 jobs:
-  deploy-management-groups:
+  remove-all-RGs:
     runs-on: [self-hosted, linux]
     permissions:
       id-token: write
