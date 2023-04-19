@@ -1,0 +1,28 @@
+name: Deprovision all the Azure Resources created during the Hackathon
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy-management-groups:
+    runs-on: [self-hosted, linux]
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: azure/login@v1
+        name: Azure OIDC login
+        with:         
+          tenant-id: ${{ secrets.TENANT_ID }}
+          client-id: ${{ secrets.CLIENT_ID }}
+          allow-no-subscriptions: true
+          enable-AzPSSession: true
+      
+      - shell: pwsh
+        name: Processing Subscriptions and Management Groups
+        id: managementGroups
+        run: |
+          ./remove-all-resource-groups.ps1
