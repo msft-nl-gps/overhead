@@ -4,7 +4,6 @@ on:
 
 jobs:
   remove-all-RGs:
-    runs-on: [self-hosted, linux]
     permissions:
       id-token: write
       contents: read
