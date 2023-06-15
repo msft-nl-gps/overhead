@@ -4,6 +4,7 @@ on:
 
 jobs:
   remove-all-RGs:
+    runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
