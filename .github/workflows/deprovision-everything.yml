@@ -20,6 +20,6 @@ jobs:
           enable-AzPSSession: true
       
       - shell: pwsh
-        name: Processing Subscriptions and Management Groups
+        name: Remove all Resource Groups
         run: |
           ./remove-all-resource-groups.ps1
