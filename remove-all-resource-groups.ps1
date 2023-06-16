@@ -1,4 +1,7 @@
 Get-AzSubscription -TenantId $TenantId | ForEach-Object { 
     Set-AzContext -SubscriptionId $_.Id
-    Get-AzResourceGroup | Remove-AzResourceGroup -Force
+    foreach ($rg in Get-AzResourceGroup)    {   
+        Write-Host "Removing resource group: $($rg.ResourceGroupName)"
+        Remove-AzResourceGroup -Force
+    }
 }
