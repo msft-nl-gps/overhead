@@ -1,4 +1,4 @@
-Get-AzSubscription -TenantId $TenantId | ForEach-Object -Parallel {
+Get-AzSubscription -TenantId $TenantId | ForEach-Object {
     Set-AzContext -SubscriptionId $_.Id
     $VMs = Get-AzVM
     $VMs | ForEach-Object -Parallel {
