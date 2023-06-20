@@ -8,7 +8,7 @@ $AllMGs | Foreach-Object {
     foreach ($Assignment in $Assignments){
         if ($Assignment.Scope -notlike $TRMG.Id){
             Write-Host ("Removing policy assignment [{0}] that contains the policy definition id: [{1}] at scope [{2}]" -f $Assignment.DisplayName, $Assignment.PolicyDefinitionId, $Assignment.Scope)
-            Remove-AzPolicyAssignment -Id $Assignment.Id -Force
+            #Remove-AzPolicyAssignment -Id $Assignment.Id -Force
         }
     }
 }
