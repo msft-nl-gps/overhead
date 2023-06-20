@@ -1,4 +1,4 @@
-name: Remove All Policies
+name: Remove All Policy Assignments
 
 on:
     workflow_call:
