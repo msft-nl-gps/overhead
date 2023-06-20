@@ -13,3 +13,6 @@ jobs:
   remove-all-external-users:
     uses: ./.github/workflows/remove-all-hackathon-participants.yml
     secrets: inherit
+  remove-all-policies:
+    uses: ./.github/workflows/remove-all-policy-assignments.yml
+    secrets: inherit
