@@ -4,7 +4,7 @@ Get-AzSubscription -TenantId $TenantId | ForEach-Object {
     $VMs | ForEach-Object -Parallel {
         try{
             Write-Host "Trying to stop the VM: $($_.Name)"
-            Stop-AzVM $_ -Force
+            $_ | Stop-AzVM -Force
             Write-Host "Successfully stopped the VM: $($_.Name)"
         }
         catch{
