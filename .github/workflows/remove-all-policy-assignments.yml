@@ -22,6 +22,6 @@ jobs:
                     enable-AzPSSession: true
             
             - shell: pwsh
-              name: Remove All Policies
+              name: Remove All Policy Assignments
               run: |
                 ./scripts/remove-all-policy-assignments.ps1
