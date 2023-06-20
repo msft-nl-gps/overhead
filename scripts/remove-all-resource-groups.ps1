@@ -1,8 +1,14 @@
-Get-AzSubscription -TenantId $TenantId | ForEach-Object { 
+Get-AzSubscription -TenantId $TenantId | ForEach-Object -Parallel {
     Set-AzContext -SubscriptionId $_.Id
-    foreach ($rg in Get-AzResourceGroup)    {   
-        Write-Host "Removing resource group: $($rg.ResourceGroupName)"
-        try{Remove-AzResourceGroup $rg.ResourceGroupName -Force}
-        catch{}
+    $RGs = Get-AzResourceGroup
+    $RGs | ForEach-Object -Parallel {
+        try{
+            Write-Host "Trying to remove the resource group: $($_.ResourceGroupName)"
+            Remove-AzResourceGroup $_.ResourceGroupName -Force
+            Write-Host "Successfully removed the resource group: $($_.ResourceGroupName)"
+        }
+        catch{
+            Write-Warning "Failed to remove resource group: $($_.ResourceGroupName)"
+        }
     }
 }
