@@ -3,23 +3,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  remove-all-RGs:
-    runs-on: [self-hosted, linux]
-    permissions:
-      id-token: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v2
-      
-      - uses: azure/login@v1
-        name: Azure OIDC login
-        with:         
-          tenant-id: ${{ secrets.TENANT_ID }}
-          client-id: ${{ secrets.CLIENT_ID }}
-          allow-no-subscriptions: true
-          enable-AzPSSession: true
-      
-      - shell: pwsh
-        name: Remove all Resource Groups
-        run: |
-          ./scripts/remove-all-resource-groups.ps1
+  stop-all-azure-vms:
+    uses: ./.github/workflows/stop-all-virtual-machines.yml
+    secrets: inherit
+  remove-all-resource-groups:
+    needs: stop-all-azure-vms
+    uses: ./.github/workflows/remove-all-resource-groups.yml
+    secrets: inherit
+  remove-all-external-users:
+    uses: ./.github/workflows/remove-all-hackathon-participants.yml
+    secrets: inherit

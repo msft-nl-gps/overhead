@@ -1,13 +1,11 @@
-name: Stop all Azure VMs
+name: Remove All Resource Groups
 
 on:
     workflow_call:
     workflow_dispatch:
-    schedule:
-      - cron: '0 19 * * *'
 
 jobs:
-    stop-all-vms:
+    remove-all-rgs:
         runs-on: [self-hosted, linux]
         permissions:
             id-token: write
@@ -24,7 +22,7 @@ jobs:
                     enable-AzPSSession: true
             
             - shell: pwsh
-              name: Stop Azure Virtual Machines
+              name: Remove All Resource Groups
               run: |
-                ./scripts/stop-virtual-machines.ps1
-    
+                ./scripts/remove-all-resource-groups.ps1
+            
