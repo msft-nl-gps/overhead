@@ -1,15 +1,16 @@
 $TRMG = Get-AzManagementGroup | where {$_.Name -like $_.TenantId}
 
-$AllMGs = Get-AzManagementGroup | where {$_.Name -notlike $TRMG.te}
-#$AllMGs
+$AllMGs = Get-AzManagementGroup | where {$_.Name -notlike $TRMG.TenantId}
+$AllMGs
 
-$AllMGs | Foreach-Object {
-    $Assignments = Get-AzPolicyAssignment -Scope $_.Id | Select-Object -ExpandProperty properties
-    foreach ($Assignment in $Assignments){
-        if ($Assignment.Scope -notlike $TRMG.Id){
-            Write-Host ("Removing policy assignment [{0}] that contains the policy definition id: [{1}] at scope [{2}]" -f $Assignment.DisplayName, $Assignment.PolicyDefinitionId, $Assignment.Scope)
-            Remove-AzPolicyAssignment -Id $Assignment.Id -Force
-        }
+ForEach ($MG in $AllMGs){
+    Write-Host ("Removing policy assignments from management group: [{0} - {1}]" -f $MG.DisplayName, $MG.Id)
+    $allPolicyAssignments = Get-AzPolicyAssignment -Scope $MG.Id
+    foreach ($policyAssignment in $allPolicyAssignments){
+        if ($policyAssignment.Properties.Scope -notlike $TRMG.Id){
+            Write-Host ("Removing policy assignment [{0}] that contains the policy definition id: [{1}] at scope [{2}]" -f $policyAssignment.Properties.DisplayName, $policyAssignment.Properties.PolicyDefinitionId, $policyAssignment.Properties.Scope)
+            Remove-AzPolicyAssignment -Id $policyAssignmens.ResourceId -Confirm:$false
+        }        
     }
 }
 
