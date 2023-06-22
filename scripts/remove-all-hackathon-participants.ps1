@@ -20,17 +20,18 @@ foreach ($aadUser in $allUsers)  {
             Write-Error "UPN cannot be null!"
         }
         'admin@mngenvmcap*' {
-            Write-Host ("User: [{0}] with UPN: [{1}] is an admin and will be skipped." -f $aadUser.displayName, $aadUser.userPrincipalName)
+            Write-Host ("User: [{0}] is an admin and will be skipped." -f $aadUser.displayName)
         }
         'ms-serviceaccount@mngenvmcap*' {
-            Write-Host ("User: [{0}] with UPN: [{1}] is an admin and will be skipped." -f $aadUser.displayName, $aadUser.userPrincipalName)
+            Write-Host ("User: [{0}] is an admin and will be skipped." -f $aadUser.displayName)
         }
         '*microsoft.com#ext#*'{
             Write-Host ("User: [{0}] is a Microsoft employee and will be skipped." -f $aadUser.displayName)
         }
         Default {
-            Write-Warning ("Removing user: [{0}] with id [{1}] and UPN: [{2}]" -f $aadUser.displayName, $aadUser.id, $aadUser.userPrincipalName)
-            #Invoke-RestMethod -Uri $($uri + '/' + $aadUser.id) -Headers @{'Authorization'='Bearer '+ $authToken.token} -Method Delete
+            Write-Warning ("Removing user: [{0}] with id [{1}] and UPN: [{2}]..." -f $aadUser.displayName, $aadUser.id, $aadUser.userPrincipalName)
+            Invoke-RestMethod -Uri $($uri + '/' + $aadUser.id) -Headers @{'Authorization'='Bearer '+ $authToken.token} -Method Delete
+            Write-Host ("Removed user: [{0}] with id [{1}]" -f $aadUser.displayName, $aadUser.id)
         }
     }
 }
