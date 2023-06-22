@@ -21,14 +21,14 @@ Write-Host "Removing all hackathon participants..."
             {
                 if($_.mail -eq "" -or $null -eq $_.mail)
                 {
-                    Write-Host ("User Id is empty, continue deletion [{0}]" -f $_.id)
+                    Write-Host ("User email is empty, continue deletion [{0}]" -f $_.id)
 
                     Write-Host ("Removing user [{0}]" -f $_.mail)
-                    Write-Host ("Skip for now to prevent deletion [{0}]" -f $_.mail)
+                    # Write-Host ("Skip for now to prevent deletion [{0}]" -f $_.mail)
 
-                    # $uri = "https://graph.microsoft.com/$graphApiVersion/$($User_resource)/$userId"
-                    # Write-Verbose $uri
-                    # Invoke-RestMethod -Uri $uri -Headers @{'Authorization'='Bearer '+ $authToken.token} -Method Delete
+                    $uri = "https://graph.microsoft.com/$graphApiVersion/$($User_resource)/$userId"
+                    Write-Verbose $uri
+                    Invoke-RestMethod -Uri $uri -Headers @{'Authorization'='Bearer '+ $authToken.token} -Method Delete
                 }
                 else
                 {
@@ -38,11 +38,11 @@ Write-Host "Removing all hackathon participants..."
                     else
                     {
                         Write-Host ("Removing user [{0}]" -f $_.mail)
-                        Write-Host ("Skip for now to prevent deletion [{0}]" -f $_.mail)
+                        # Write-Host ("Skip for now to prevent deletion [{0}]" -f $_.mail)
     
-                        # $uri = "https://graph.microsoft.com/$graphApiVersion/$($User_resource)/$userId"
-                        # Write-Verbose $uri
-                        # Invoke-RestMethod -Uri $uri -Headers @{'Authorization'='Bearer '+ $authToken.token} -Method Delete
+                        $uri = "https://graph.microsoft.com/$graphApiVersion/$($User_resource)/$userId"
+                        Write-Verbose $uri
+                        Invoke-RestMethod -Uri $uri -Headers @{'Authorization'='Bearer '+ $authToken.token} -Method Delete
                     }
 
                 }
