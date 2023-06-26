@@ -8,16 +8,16 @@ Write-Host ('Access Token acquired! Length: [{0}] chars - Expires on: [{1}]' -f 
 
 $graphApiVersion = "beta"
 $userResource = "users"
-$groupResource = "groups"
+# $groupResource = "groups"
 
 $domain = "@mngenvmcap168626.onmicrosoft.com"
 # $roleAssignmentGroupId = "75a3feb5-db44-4442-9d71-82826c19c56f"
 
 
 $uriUser = "https://graph.microsoft.com/$graphApiVersion/$($userResource)"
-# $uriGroup = "https://graph.microsoft.com/$graphApiVersion/$($groupResource)/$($roleAssignmentGroupId)/members/$($ref)"
+# $uriGroup = "https://graph.microsoft.com/$graphApiVersion/$($groupResource)/$($roleAssignmentGroupId)/members/$($ref))"
 
-Invoke-RestMethod -Uri "https://graph.microsoft.com/$graphApiVersion/$($groupResource)" -Headers @{'Authorization'='Bearer '+ $authToken.token} -ContentType 'application/json' -Method Get
+# Invoke-RestMethod -Uri "https://graph.microsoft.com/$graphApiVersion/$($groupResource)" -Headers @{'Authorization'='Bearer '+ $authToken.token} -ContentType 'application/json' -Method Get
 
 
 for ($i = 1; $i -le 25; $i++) {
@@ -33,17 +33,31 @@ for ($i = 1; $i -le 25; $i++) {
         }
         usageLocation = "NL"
     }
-
-    $aadUser = Invoke-RestMethod -Uri $uriUser -Headers @{'Authorization'='Bearer '+ $authToken.token} -ContentType 'application/json' -Method Post -Body ($body | ConvertTo-Json)
+    Invoke-RestMethod -Uri $uriUser -Headers @{'Authorization'='Bearer '+ $authToken.token} -ContentType 'application/json' -Method Post -Body ($body | ConvertTo-Json)
     Write-Warning ("Created user: [{0}]" -f $body.userPrincipalName)
-    <# Invoke-RestMethod -Uri "https://graph.microsoft.com/$graphApiVersion/users/$($aadUser.id)" -Headers @{'Authorization'='Bearer '+ $authToken.token} -ContentType 'application/json' -Method Get     
+}
+
+<# $headers = @{
+    'Authorization'='Bearer '+ $authToken.token
+    'ConsistencyLevel'='eventual'
+} #>
+
+<# $allAADUsers = Invoke-RestMethod -Uri $($uriUser + '/?$filter=startswith(userPrincipalName,''hackathon-'')&count=true') -Headers $headers  -Method Get
+# To avoid pagination, use the following:
+$allUsers = $allAADUsers.value
+Write-Host "Processing [$($allUsers.Count)] users..." #>
+
+<# foreach ($aadUser in $allUsers)  {
+    Write-Host ("Processing user: [{0}] with id [{1}]..." -f $aadUser.displayName, $aadUser.id)
+    
     $bodyUser = @{
-        "@odata.id" = "https://graph.microsoft.com/$graphApiVersion/directoryObjects/$($aadUser.id)"
+        "@odata.id" = "https://graph.microsoft.com/$graphApiVersion/directoryObjects/$($aadUser.userPrincipalName)"
     } | ConvertTo-Json
 
     Invoke-RestMethod -Uri $uriGroup -Headers @{'Authorization'='Bearer '+ $authToken.token} -ContentType 'application/json' -Method Post -Body $bodyUser
-    Write-Warning ("User added to the group [{0}] to grant license and role" -f  $roleAssignmentGroupId) #>
-
-}
-
+    
+    Write-Warning ("User: [{0}] with id [{1}] and UPN: [{2}] added to group [{3}] for licensing and role assingment" -f $aadUser.displayName, $aadUser.id, $aadUser.userPrincipalName, $roleAssignmentGroupId) #>
+           
+<# }
+ #>
 Write-Host "Done provisioning hackathon participants!"
