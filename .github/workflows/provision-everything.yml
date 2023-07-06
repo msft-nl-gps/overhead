@@ -6,3 +6,5 @@ jobs:
   create-all-users:
     uses: ./.github/workflows/create-all-users.yml
     secrets: inherit
+    with:
+      passwordPrefix: ${{ secrets.PW_PREFIX }}
