@@ -25,6 +25,7 @@ jobs:
             - shell: pwsh
               name: Create All Users & Grant Permissions & Licenses
               run: |
-                $passwordPrefix = ${{ secrets.PW_PREFIX }}
+                Get-ChildItem env:
+                $passwordPrefix = "${{ secrets.PW_PREFIX }}"
                 ./scripts/provision-hackathon-participants.ps1 -passwordPrefix $(ConvertTo-SecureString -String $passwordPrefix -AsPlainText -Force)
             
