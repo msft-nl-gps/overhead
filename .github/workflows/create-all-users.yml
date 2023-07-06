@@ -2,6 +2,10 @@ name: Remove All Resource Groups
 
 on:
     workflow_call:
+        inputs:
+            passwordPrefix:
+                required: true
+                type: string
     workflow_dispatch:
 
 jobs:
