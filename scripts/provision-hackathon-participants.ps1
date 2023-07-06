@@ -19,7 +19,7 @@ $uriGroup = "https://graph.microsoft.com/$graphApiVersion/$($groupResource)/$($r
 
 if(Invoke-RestMethod -Uri "https://graph.microsoft.com/$graphApiVersion/$($groupResource)" -Headers @{'Authorization' = 'Bearer ' + $authToken.token } -ContentType 'application/json' -Method Get){
 
-    for ($i = 100; $i -le 110; $i++) {
+    for ($i = 111; $i -le 120; $i++) {
         Write-Output ("Processing user: [{0}] ..." -f $i)
         $body = @{
             accountEnabled    = $true

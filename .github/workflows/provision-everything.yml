@@ -1,0 +1,8 @@
+name: Provision all the Azure users and its permissions for the Hackathon
+on:
+  workflow_dispatch:
+
+jobs:
+  create-all-users:
+    uses: ./.github/workflows/create-all-users.yml
+    secrets: inherit

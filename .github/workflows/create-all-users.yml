@@ -1,0 +1,28 @@
+name: Remove All Resource Groups
+
+on:
+    workflow_call:
+    workflow_dispatch:
+
+jobs:
+    create-all-users:
+        runs-on: [self-hosted, linux]
+        permissions:
+            id-token: write
+            contents: read
+        steps:
+            - uses: actions/checkout@v2
+
+            - uses: azure/login@v1
+              name: Azure OIDC login
+              with:         
+                    tenant-id: ${{ secrets.TENANT_ID }}
+                    client-id: ${{ secrets.CLIENT_ID }}
+                    allow-no-subscriptions: true
+                    enable-AzPSSession: true
+            
+            - shell: pwsh
+              name: Create All Users & Grant Permissions & Licenses
+              run: |
+                ./scripts/provision-hackathon-participants.ps1
+            
