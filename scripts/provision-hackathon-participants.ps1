@@ -4,7 +4,9 @@ param(
     [Parameter(Mandatory = $false)][string]$domain = '@mngenvmcap168626.onmicrosoft.com',
     [Parameter(Mandatory = $false)][string]$roleAssignmentGroupId = '75a3feb5-db44-4442-9d71-82826c19c56f',
     [Parameter(Mandatory = $false)][string]$graphApiVersion = 'beta',
-    [Parameter(Mandatory = $false)][string]$usageLocation = 'NL'
+    [Parameter(Mandatory = $false)][string]$usageLocation = 'NL',
+    [Parameter(Mandatory = $false)][string]$startDateTime = '2023-07-20T00:00:00Z',
+    [Parameter(Mandatory = $false)][string]$endDateTime = '2023-07-21T00:00:00Z'
 )
 
 Write-Host "Provisioning hackathon participants..."
@@ -61,9 +63,9 @@ if (Invoke-RestMethod -Uri $baseUriGroup -Headers @{'Authorization' = 'Bearer ' 
         directoryScopeId = "/"
         principalId      = $roleAssignmentGroupId
         scheduleInfo     = @{
-            startDateTime = "2023-07-15T00:00:00Z"
+            startDateTime = [System.DateTime]::Parse($startDateTime)
             expiration    = @{
-                endDateTime = "2023-07-16T00:00:00Z"
+                endDateTime = [System.DateTime]::Parse($endDateTime)
                 type        = "AfterDateTime"
             }
         }
