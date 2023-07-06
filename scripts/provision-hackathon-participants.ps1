@@ -1,6 +1,9 @@
 param(
     [Parameter(Mandatory = $true)][securestring]$passwordPrefix,
-    [Parameter(Mandatory = $false)][string]$maxNumberOfParticipants = 25
+    [Parameter(Mandatory = $false)][string]$maxNumberOfParticipants = 25,
+    [Parameter(Mandatory = $false)][string]$domain = '@mngenvmcap168626.onmicrosoft.com',
+    [Parameter(Mandatory = $false)][string]$roleAssignmentGroupId = '75a3feb5-db44-4442-9d71-82826c19c56f',
+    [Parameter(Mandatory = $false)][string]$graphApiVersion = 'beta'
 )
 
 Write-Host "Provisioning hackathon participants..."
@@ -8,16 +11,13 @@ Write-Host "Assign role and license using group membership..."
 
 
 $authToken = Get-AzAccessToken -ResourceUrl "https://graph.microsoft.com"
-
 Write-Host ('Access Token acquired! Length: [{0}] chars - Expires on: [{1}]' -f $authToken.Token.Length, $authToken.ExpiresOn)
 
-$graphApiVersion = "beta"
 $userResource = "users"
 $groupResource = "groups"
 
-$domain = "@mngenvmcap168626.onmicrosoft.com"
 $uriUser = "https://graph.microsoft.com/$graphApiVersion/$($userResource)"
-$roleAssignmentGroupId = "75a3feb5-db44-4442-9d71-82826c19c56f"
+
 # Pay attention to the backtick (`) in the URI below. This is required to escape the $ref character in the URI.
 $uriGroup = "https://graph.microsoft.com/$graphApiVersion/$($groupResource)/$($roleAssignmentGroupId)/members/" + "`$ref"
 $password = $(ConvertFrom-SecureString $passwordPrefix -AsPlainText) + $(Get-Date -Format yyyyMMdd) + '!'
@@ -47,8 +47,12 @@ if (Invoke-RestMethod -Uri "https://graph.microsoft.com/$graphApiVersion/$($grou
         } 
 
         Invoke-RestMethod -Uri $uriGroup -Headers @{'Authorization' = 'Bearer ' + $authToken.token } -ContentType 'application/json' -Method Post -Body $($bodyUser | ConvertTo-Json)
-        Write-Warning ("User: [{0}] with id [{1}] and UPN: [{2}] added to group [{3}] for licensing and role assingment" -f $user.displayName, $user.id, $user.userPrincipalName, $roleAssignmentGroupId)         
+        Write-Warning ("User: [{0}] with id [{1}] and UPN: [{2}] added to group [{3}] for licensing and role assingment" -f $user.displayName, $user.id, $user.userPrincipalName, $roleAssignmentGroupId)
+        $body = $null
+        $user = $null
+        $bodyUser = $null         
     }
+
     $bodyRoleAssignment = @{    
         action           = "AdminAssign"
         justification    = "Assign Hackathon user permissions via PIM for the duration of the hackathon"
@@ -65,10 +69,6 @@ if (Invoke-RestMethod -Uri "https://graph.microsoft.com/$graphApiVersion/$($grou
     }
 
     Invoke-RestMethod -Uri "https://graph.microsoft.com/$graphApiVersion/roleManagement/directory/roleEligibilityScheduleRequests" -Headers @{'Authorization' = 'Bearer ' + $authToken.token } -ContentType 'application/json' -Method Post -Body $($bodyRoleAssignment | ConvertTo-Json -Depth 3)
-   
-    $body = $null
-    $user = $null
-    $bodyUser = $null
     $bodyRoleAssignment = $null
 }
 else {
