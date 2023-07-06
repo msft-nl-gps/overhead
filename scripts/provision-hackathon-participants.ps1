@@ -1,3 +1,7 @@
+param(
+    [Parameter(Mandatory=$true)][securestring]$passwordPrefix    
+)
+
 Write-Host "Provisioning hackathon participants..."
 Write-Host "Assign role and license using group membership..."
 
@@ -15,7 +19,7 @@ $uriUser = "https://graph.microsoft.com/$graphApiVersion/$($userResource)"
 $roleAssignmentGroupId = "75a3feb5-db44-4442-9d71-82826c19c56f"
 # Pay attention to the backtick (`) in the URI below. This is required to escape the $ref character in the URI.
 $uriGroup = "https://graph.microsoft.com/$graphApiVersion/$($groupResource)/$($roleAssignmentGroupId)/members/" + "`$ref"
-$password = $passwordPrefix + $(Get-Date -Format yyyyMMdd) + '!'
+$password =  $(ConvertFrom-SecureString $passwordPrefix -AsPlainText) + $(Get-Date -Format yyyyMMdd) + '!'
 
 
 if(Invoke-RestMethod -Uri "https://graph.microsoft.com/$graphApiVersion/$($groupResource)" -Headers @{'Authorization' = 'Bearer ' + $authToken.token } -ContentType 'application/json' -Method Get){
@@ -66,5 +70,3 @@ if(Invoke-RestMethod -Uri "https://graph.microsoft.com/$graphApiVersion/$($group
     Write-Warning ("Provisioning has stopped. Group for licensing and permissions with id [{0}] could not be found." -f $roleAssignmentGroupId)
 }
 Write-Host "Done provisioning hackathon participants!"
-
-

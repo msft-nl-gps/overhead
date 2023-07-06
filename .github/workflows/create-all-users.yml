@@ -25,7 +25,6 @@ jobs:
             - shell: pwsh
               name: Create All Users & Grant Permissions & Licenses
               run: |
-                ./scripts/provision-hackathon-participants.ps1
-              with:
-                    passwordPrefix: ${{ secrets.PW_PREFIX }}
+                $passwordPrefix = ${{ secrets.PW_PREFIX }}
+                ./scripts/provision-hackathon-participants.ps1 -passwordPrefix $(ConvertTo-SecureString -String $passwordPrefix -AsPlainText -Force)
             
