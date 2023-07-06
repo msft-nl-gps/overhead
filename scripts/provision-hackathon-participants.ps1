@@ -44,7 +44,7 @@ if (Invoke-RestMethod -Uri $baseUriGroup -Headers @{'Authorization' = 'Bearer ' 
         Write-Warning ("Created user: [{0}]" -f $user.userPrincipalName)
 
         $bodyUser = @{
-            "@odata.id" = "https://graph.microsoft.com/$graphApiVersion/directoryObjects/$($user.id)"
+            "@odata.id" = $("https://graph.microsoft.com/" + $graphApiVersion + "/directoryObjects/" + $user.id)
         } 
 
         Invoke-RestMethod -Uri $uriGroupMembers -Headers @{'Authorization' = 'Bearer ' + $authToken.token } -ContentType 'application/json' -Method Post -Body $($bodyUser | ConvertTo-Json)
