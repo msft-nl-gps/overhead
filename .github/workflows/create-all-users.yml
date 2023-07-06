@@ -18,7 +18,7 @@ jobs:
               with:         
                     tenant-id: ${{ secrets.TENANT_ID }}
                     client-id: ${{ secrets.CLIENT_ID }}
-                    passwordPrefix: ${{ secrets.PW_PREFIX }}
+                    
                     allow-no-subscriptions: true
                     enable-AzPSSession: true
             
@@ -26,4 +26,6 @@ jobs:
               name: Create All Users & Grant Permissions & Licenses
               run: |
                 ./scripts/provision-hackathon-participants.ps1
+              with:
+                    passwordPrefix: ${{ secrets.PW_PREFIX }}
             
