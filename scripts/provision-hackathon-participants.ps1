@@ -69,7 +69,7 @@ if (Invoke-RestMethod -Uri $baseUriGroup -Headers @{'Authorization' = 'Bearer ' 
         }
     }
 
-    Invoke-RestMethod -Uri "https://graph.microsoft.com/" + $graphApiVersion + "/roleManagement/directory/roleEligibilityScheduleRequests" -Headers @{'Authorization' = 'Bearer ' + $authToken.token } -ContentType 'application/json' -Method Post -Body $($bodyRoleAssignment | ConvertTo-Json -Depth 3)
+    Invoke-RestMethod -Uri $("https://graph.microsoft.com/" + $graphApiVersion + "/roleManagement/directory/roleEligibilityScheduleRequests") -Headers @{'Authorization' = 'Bearer ' + $authToken.token } -ContentType 'application/json' -Method Post -Body $($bodyRoleAssignment | ConvertTo-Json -Depth 3)
     $bodyRoleAssignment = $null
 }
 else {
