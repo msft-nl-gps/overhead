@@ -20,7 +20,7 @@ $password = $passwordPrefix + $(Get-Date -Format yyyyMMdd) + '!'
 
 if(Invoke-RestMethod -Uri "https://graph.microsoft.com/$graphApiVersion/$($groupResource)" -Headers @{'Authorization' = 'Bearer ' + $authToken.token } -ContentType 'application/json' -Method Get){
 
-    for ($i = 111; $i -le 120; $i++) {
+    for ($i = 1; $i -le 25; $i++) {
         Write-Output ("Processing user: [{0}] ..." -f $i)
         $body = @{
             accountEnabled    = $true
