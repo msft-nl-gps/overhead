@@ -9,3 +9,7 @@ This repo contains resources and links to resources that might help teams.
 ## Example projects on GitHub
 
 - [azure-search-openai-demo](https://github.com/azure-samples/azure-search-openai-demo)
+
+
+## Photos
+- https://1drv.ms/a/s!AhWjHLvHdxcrg9ICmSxK8MS716J7mw
