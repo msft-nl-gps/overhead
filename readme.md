@@ -2,6 +2,10 @@
 
 This repo contains resources and links to resources that might help teams.
 
+## Microsoft Learn 
+- https://learn.microsoft.com/en-us/azure/ai-services/openai/use-your-data-quickstart?tabs=command-line&pivots=programming-language-studio
+- https://learn.microsoft.com/en-us/azure/ai-services/openai/tutorials/embeddings?tabs=command-line
+
 ## Example projects on GitHub
 
-[azure-search-openai-demo](https://github.com/azure-samples/azure-search-openai-demo)
+- [azure-search-openai-demo](https://github.com/azure-samples/azure-search-openai-demo)
