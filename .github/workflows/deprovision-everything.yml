@@ -1,6 +1,8 @@
 name: Deprovision all the Azure Resources created during the Hackathon
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 13 * * 6'
 
 jobs:
   stop-all-azure-vms:
@@ -12,6 +14,10 @@ jobs:
     secrets: inherit
   remove-all-external-users:
     uses: ./.github/workflows/remove-all-hackathon-participants.yml
+    secrets: inherit
+  remove-all-security-groups:
+    needs: remove-all-external-users
+    uses: ./.github/workflows/remove-all-security-groups.yml
     secrets: inherit
   remove-all-policy-assignments:
     uses: ./.github/workflows/remove-all-policy-assignments.yml
