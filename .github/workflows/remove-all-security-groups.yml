@@ -22,6 +22,7 @@ jobs:
                     enable-AzPSSession: true
             
             - shell: pwsh
-              name: Remove All Unmanaged Security Groups
+              name: Remove All Security Groups
+              working-directory: ./scripts
               run: |
-                ./scripts/remove-all-unmanaged-security-groups.ps1
+                ./scripts/remove-all-security-groups.ps1
