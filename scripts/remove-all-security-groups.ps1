@@ -54,6 +54,7 @@ foreach ($aadGroup in $allGroups) {
         }
         else {
             Write-Verbose ("Removing Managed Group: [{0}] with id [{1}]..." -f $aadGroup.displayName, $aadGroup.id) -Verbose
+            removeEntraGroup -group $aadGroup
         }        
     }
     else {

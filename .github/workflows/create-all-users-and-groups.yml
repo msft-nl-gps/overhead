@@ -1,4 +1,4 @@
-name: Remove All Resource Groups
+name: Create all users and groups
 
 on:
     workflow_call:
@@ -23,8 +23,9 @@ jobs:
                     enable-AzPSSession: true
             
             - shell: pwsh
-              name: Create All Users & Grant Permissions & Licenses
+              name: Create All Users and Groups
+              working-directory: ./scripts
               run: |
                 $passwordPrefix = "${{ secrets.PW_PREFIX }}"
-                ./scripts/provision-hackathon-participants.ps1 -passwordPrefix $(ConvertTo-SecureString -String $passwordPrefix -AsPlainText -Force)
+                ./create-all-users-and-groups.ps1 -passwordPrefix $(ConvertTo-SecureString -String $passwordPrefix -AsPlainText -Force)
             
