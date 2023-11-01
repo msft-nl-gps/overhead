@@ -25,4 +25,4 @@ jobs:
               name: Remove All Security Groups
               working-directory: ./scripts
               run: |
-                ./scripts/remove-all-security-groups.ps1
+                ./remove-all-security-groups.ps1
