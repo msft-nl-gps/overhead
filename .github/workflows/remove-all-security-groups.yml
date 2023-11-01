@@ -5,7 +5,7 @@ on:
     workflow_dispatch:
 
 jobs:
-    remove-all-hackathon-participants:
+    remove-all-security-groups:
         runs-on: [self-hosted, linux]
         permissions:
             id-token: write
