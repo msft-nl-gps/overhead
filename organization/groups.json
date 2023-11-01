@@ -1,5 +1,34 @@
 [
     {
+        "DisplayName": "All Company",
+        "EntraRoles": [],
+        "AzureResourcesRoles": [],
+        "Flags": {
+            "doNotRemove": true
+        }
+    },
+    {
+        "DisplayName": "Galaxy Defenders",
+        "EntraRoles": [
+            {
+                "Name": "Global Administrator",
+                "TemplateId": "62e90394-69f5-4237-9190-012177145e10"
+            }
+        ],
+        "AzureResourcesRoles": [
+            {
+                "ManagementGroups": [
+                    {
+                        "Name": "Tatooine"
+                    }
+                ]
+            }
+        ],
+        "Flags": {
+            "doNotRemove": true
+        }
+    },
+    {
         "DisplayName": "Wookies",
         "EntraRoles": [
             {
@@ -13,7 +42,7 @@
         ],
         "AzureResourcesRoles": [
             {
-                "ManagementGroups":[
+                "ManagementGroups": [
                     {
                         "Name": "Wookies"
                     }
@@ -35,7 +64,7 @@
         ],
         "AzureResourcesRoles": [
             {
-                "ManagementGroups":[
+                "ManagementGroups": [
                     {
                         "Name": "Arconas"
                     }
@@ -57,7 +86,7 @@
         ],
         "AzureResourcesRoles": [
             {
-                "ManagementGroups":[
+                "ManagementGroups": [
                     {
                         "Name": "TuskenRaiders"
                     }
@@ -79,7 +108,7 @@
         ],
         "AzureResourcesRoles": [
             {
-                "ManagementGroups":[
+                "ManagementGroups": [
                     {
                         "Name": "Gungans"
                     }
@@ -101,7 +130,7 @@
         ],
         "AzureResourcesRoles": [
             {
-                "ManagementGroups":[
+                "ManagementGroups": [
                     {
                         "Name": "Kyuzos"
                     }
@@ -123,7 +152,7 @@
         ],
         "AzureResourcesRoles": [
             {
-                "ManagementGroups":[
+                "ManagementGroups": [
                     {
                         "Name": "Snivvians"
                     }
@@ -145,7 +174,7 @@
         ],
         "AzureResourcesRoles": [
             {
-                "ManagementGroups":[
+                "ManagementGroups": [
                     {
                         "Name": "Rodians"
                     }
@@ -167,7 +196,7 @@
         ],
         "AzureResourcesRoles": [
             {
-                "ManagementGroups":[
+                "ManagementGroups": [
                     {
                         "Name": "Klatoonians"
                     }
@@ -189,7 +218,7 @@
         ],
         "AzureResourcesRoles": [
             {
-                "ManagementGroups":[
+                "ManagementGroups": [
                     {
                         "Name": "Vurks"
                     }
@@ -211,7 +240,7 @@
         ],
         "AzureResourcesRoles": [
             {
-                "ManagementGroups":[
+                "ManagementGroups": [
                     {
                         "Name": "KelDors"
                     }
