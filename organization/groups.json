@@ -1,0 +1,251 @@
+[
+    {
+        "DisplayName": "All Company",
+        "EntraRoles": [],
+        "AzureResourcesRoles": [],
+        "Flags": {
+            "doNotRemove": true
+        }
+    },
+    {
+        "DisplayName": "Galaxy Defenders",
+        "EntraRoles": [
+            {
+                "Name": "Global Administrator",
+                "TemplateId": "62e90394-69f5-4237-9190-012177145e10"
+            }
+        ],
+        "AzureResourcesRoles": [
+            {
+                "ManagementGroups": [
+                    {
+                        "Name": "Tatooine"
+                    }
+                ]
+            }
+        ],
+        "Flags": {
+            "doNotRemove": true
+        }
+    },
+    {
+        "DisplayName": "Wookies",
+        "EntraRoles": [
+            {
+                "Name": "Global Reader",
+                "TemplateId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+            },
+            {
+                "Name": "User Administrator",
+                "TemplateId": "fe930be7-5e62-47db-91af-98c3a49a38b1"
+            }
+        ],
+        "AzureResourcesRoles": [
+            {
+                "ManagementGroups": [
+                    {
+                        "Name": "Wookies"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "DisplayName": "Arconas",
+        "EntraRoles": [
+            {
+                "Name": "Global Reader",
+                "TemplateId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+            },
+            {
+                "Name": "User Administrator",
+                "TemplateId": "fe930be7-5e62-47db-91af-98c3a49a38b1"
+            }
+        ],
+        "AzureResourcesRoles": [
+            {
+                "ManagementGroups": [
+                    {
+                        "Name": "Arconas"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "DisplayName": "TuskenRaiders",
+        "EntraRoles": [
+            {
+                "Name": "Global Reader",
+                "TemplateId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+            },
+            {
+                "Name": "User Administrator",
+                "TemplateId": "fe930be7-5e62-47db-91af-98c3a49a38b1"
+            }
+        ],
+        "AzureResourcesRoles": [
+            {
+                "ManagementGroups": [
+                    {
+                        "Name": "TuskenRaiders"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "DisplayName": "Gungans",
+        "EntraRoles": [
+            {
+                "Name": "Global Reader",
+                "TemplateId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+            },
+            {
+                "Name": "User Administrator",
+                "TemplateId": "fe930be7-5e62-47db-91af-98c3a49a38b1"
+            }
+        ],
+        "AzureResourcesRoles": [
+            {
+                "ManagementGroups": [
+                    {
+                        "Name": "Gungans"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "DisplayName": "Kyuzos",
+        "EntraRoles": [
+            {
+                "Name": "Global Reader",
+                "TemplateId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+            },
+            {
+                "Name": "User Administrator",
+                "TemplateId": "fe930be7-5e62-47db-91af-98c3a49a38b1"
+            }
+        ],
+        "AzureResourcesRoles": [
+            {
+                "ManagementGroups": [
+                    {
+                        "Name": "Kyuzos"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "DisplayName": "Snivvians",
+        "EntraRoles": [
+            {
+                "Name": "Global Reader",
+                "TemplateId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+            },
+            {
+                "Name": "User Administrator",
+                "TemplateId": "fe930be7-5e62-47db-91af-98c3a49a38b1"
+            }
+        ],
+        "AzureResourcesRoles": [
+            {
+                "ManagementGroups": [
+                    {
+                        "Name": "Snivvians"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "DisplayName": "Rodians",
+        "EntraRoles": [
+            {
+                "Name": "Global Reader",
+                "TemplateId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+            },
+            {
+                "Name": "User Administrator",
+                "TemplateId": "fe930be7-5e62-47db-91af-98c3a49a38b1"
+            }
+        ],
+        "AzureResourcesRoles": [
+            {
+                "ManagementGroups": [
+                    {
+                        "Name": "Rodians"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "DisplayName": "Klatoonians",
+        "EntraRoles": [
+            {
+                "Name": "Global Reader",
+                "TemplateId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+            },
+            {
+                "Name": "User Administrator",
+                "TemplateId": "fe930be7-5e62-47db-91af-98c3a49a38b1"
+            }
+        ],
+        "AzureResourcesRoles": [
+            {
+                "ManagementGroups": [
+                    {
+                        "Name": "Klatoonians"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "DisplayName": "Vurks",
+        "EntraRoles": [
+            {
+                "Name": "Global Reader",
+                "TemplateId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+            },
+            {
+                "Name": "User Administrator",
+                "TemplateId": "fe930be7-5e62-47db-91af-98c3a49a38b1"
+            }
+        ],
+        "AzureResourcesRoles": [
+            {
+                "ManagementGroups": [
+                    {
+                        "Name": "Vurks"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "DisplayName": "KelDors",
+        "EntraRoles": [
+            {
+                "Name": "Global Reader",
+                "TemplateId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451"
+            },
+            {
+                "Name": "User Administrator",
+                "TemplateId": "fe930be7-5e62-47db-91af-98c3a49a38b1"
+            }
+        ],
+        "AzureResourcesRoles": [
+            {
+                "ManagementGroups": [
+                    {
+                        "Name": "KelDors"
+                    }
+                ]
+            }
+        ]
+    }
+]

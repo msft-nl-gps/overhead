@@ -1,0 +1,202 @@
+[
+    {
+        "mailNickName": "hackathon-user-01",
+        "DisplayName": "Hackathon User 01",
+        "SecurityGroups": [
+            "Wookies"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-02",
+        "DisplayName": "Hackathon User 02",
+        "SecurityGroups": [
+            "Wookies"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-03",
+        "DisplayName": "Hackathon User 03",
+        "SecurityGroups": [
+            "Arconas"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-04",
+        "DisplayName": "Hackathon User 04",
+        "SecurityGroups": [
+            "Arconas"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-05",
+        "DisplayName": "Hackathon User 05",
+        "SecurityGroups": [
+            "TuskenRaiders"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-06",
+        "DisplayName": "Hackathon User 06",
+        "SecurityGroups": [
+            "TuskenRaiders"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-07",
+        "DisplayName": "Hackathon User 07",
+        "SecurityGroups": [
+            "Gungans"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-08",
+        "DisplayName": "Hackathon User 08",
+        "SecurityGroups": [
+            "Gungans"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-09",
+        "DisplayName": "Hackathon User 09",
+        "SecurityGroups": [
+            "Kyuzos"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-10",
+        "DisplayName": "Hackathon User 10",
+        "SecurityGroups": [
+            "Kyuzos"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-11",
+        "DisplayName": "Hackathon User 11",
+        "SecurityGroups": [
+            "Snivvians"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-12",
+        "DisplayName": "Hackathon User 12",
+        "SecurityGroups": [
+            "Snivvians"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-13",
+        "DisplayName": "Hackathon User 13",
+        "SecurityGroups": [
+            "Rodians"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-14",
+        "DisplayName": "Hackathon User 14",
+        "SecurityGroups": [
+            "Rodians"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-15",
+        "DisplayName": "Hackathon User 15",
+        "SecurityGroups": [
+            "Klatoonians"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-16",
+        "DisplayName": "Hackathon User 16",
+        "SecurityGroups": [
+            "Klatoonians"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-17",
+        "DisplayName": "Hackathon User 17",
+        "SecurityGroups": [
+            "Vurks"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-18",
+        "DisplayName": "Hackathon User 18",
+        "SecurityGroups": [
+            "Vurks"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-19",
+        "DisplayName": "Hackathon User 19",
+        "SecurityGroups": [
+            "KelDors"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    },
+    {
+        "mailNickName": "hackathon-user-20",
+        "DisplayName": "Hackathon User 20",
+        "SecurityGroups": [
+            "KelDors"
+        ],
+        "usageLocation": "NL",
+        "enabled": true,
+        "forceChangePasswordNextSignIn": false
+    }
+]
