@@ -3,6 +3,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  create-all-users:
-    uses: ./.github/workflows/create-all-users.yml
+  provision-users-and-groups:
+    uses: ./.github/workflows/provision-all-users-and-groups.yml
+    secrets: inherit
+
+  provision-management-groups-and-subscriptions:
+    needs: provision-users-and-groups
+    uses: ./.github/workflows/provision-all-management-groups-and-subscriptions.yml
     secrets: inherit

@@ -1,4 +1,4 @@
-name: Create all users and groups
+name: Provision all Management Groups and Subscriptions
 
 on:
     workflow_call:
@@ -23,9 +23,8 @@ jobs:
                     enable-AzPSSession: true
             
             - shell: pwsh
-              name: Create All Users and Groups
+              name: Management Groups and Subscriptions Provisioning
               working-directory: ./scripts
               run: |
-                $passwordPrefix = "${{ secrets.PW_PREFIX }}"
-                ./create-all-users-and-groups.ps1 -passwordPrefix $(ConvertTo-SecureString -String $passwordPrefix -AsPlainText -Force)
+                ./provision-management-groups-and-subscriptions.ps1
             
