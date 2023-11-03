@@ -12,7 +12,8 @@
         "EntraRoles": [
             {
                 "Name": "Global Administrator",
-                "TemplateId": "62e90394-69f5-4237-9190-012177145e10"
+                "TemplateId": "62e90394-69f5-4237-9190-012177145e10",
+                "DurationInDays": 0
             }
         ],
         "AzureResourcesRoles": [

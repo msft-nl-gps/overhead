@@ -1,0 +1,30 @@
+name: Provision Permissions and Entitlements
+
+on:
+    workflow_call:
+    workflow_dispatch:
+
+jobs:
+    provision-permission-entitlements:
+        runs-on: [self-hosted, linux]
+        permissions:
+            id-token: write
+            contents: read
+        steps:
+            - uses: actions/checkout@v2
+
+            - uses: azure/login@v1
+              name: Azure OIDC login
+              with:         
+                    tenant-id: ${{ secrets.TENANT_ID }}
+                    client-id: ${{ secrets.CLIENT_ID }}
+                    
+                    allow-no-subscriptions: true
+                    enable-AzPSSession: true
+            
+            - shell: pwsh
+              name: Provision Permissions and Entitlements
+              working-directory: ./scripts
+              run: |
+                ./provision-permission-entitlements.ps1
+            

@@ -11,3 +11,8 @@ jobs:
     needs: provision-users-and-groups
     uses: ./.github/workflows/provision-all-management-groups-and-subscriptions.yml
     secrets: inherit
+  
+  provision-permission-entitlements:
+    needs: provision-management-groups-and-subscriptions
+    uses: ./.github/workflows/provision-permission-entitlements.yml
+    secrets: inherit
