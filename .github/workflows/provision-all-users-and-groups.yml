@@ -27,5 +27,5 @@ jobs:
               working-directory: ./scripts
               run: |
                 $passwordPrefix = "${{ secrets.PW_PREFIX }}"
-                ./provision-all-users-and-groups.ps1 -passwordPrefix $(ConvertTo-SecureString -String $passwordPrefix -AsPlainText -Force)
+                ./provision-users-and-groups.ps1 -passwordPrefix $(ConvertTo-SecureString -String $passwordPrefix -AsPlainText -Force)
             

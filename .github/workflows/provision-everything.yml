@@ -1,4 +1,4 @@
-name: Provision all the Azure users and its permissions for the Hackathon
+name: Hackathon Provisioning
 on:
   workflow_dispatch:
 
