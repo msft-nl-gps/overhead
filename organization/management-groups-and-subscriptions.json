@@ -1,0 +1,19 @@
+{
+    "id": "1563f3ae-2c27-4ebc-b724-1804c38524f1",
+    "type": "managementGroup",
+    "name": "Tatooine",
+    "children": [
+        {
+            "id": "28c4d775-5307-406d-a88e-189b5e33e03e",
+            "type": "managementGroup",
+            "name": "Wookies",
+            "children": [
+                {
+                    "id": "613cefef-fdb2-4aa6-8225-2c3fac3dec2f",
+                    "type": "subscription",
+                    "name": "ME-MngEnvMCAP168626-bgrozoiu-1"
+                }
+            ]
+        }
+    ]
+}
