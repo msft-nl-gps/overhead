@@ -1,0 +1,31 @@
+name: Provision all users and groups
+
+on:
+    workflow_call:
+    workflow_dispatch:
+
+jobs:
+    create-all-users:
+        runs-on: [self-hosted, linux]
+        permissions:
+            id-token: write
+            contents: read
+        steps:
+            - uses: actions/checkout@v2
+
+            - uses: azure/login@v1
+              name: Azure OIDC login
+              with:         
+                    tenant-id: ${{ secrets.TENANT_ID }}
+                    client-id: ${{ secrets.CLIENT_ID }}
+                    
+                    allow-no-subscriptions: true
+                    enable-AzPSSession: true
+            
+            - shell: pwsh
+              name: Create All Users and Groups
+              working-directory: ./scripts
+              run: |
+                $passwordPrefix = "${{ secrets.PW_PREFIX }}"
+                ./provision-users-and-groups.ps1 -passwordPrefix $(ConvertTo-SecureString -String $passwordPrefix -AsPlainText -Force)
+            

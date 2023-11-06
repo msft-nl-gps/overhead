@@ -1,11 +1,11 @@
-name: Remove All Resource Groups
+name: Provision all Management Groups and Subscriptions
 
 on:
     workflow_call:
     workflow_dispatch:
 
 jobs:
-    create-all-users:
+    provision-management-groups-and-subscriptions:
         runs-on: [self-hosted, linux]
         permissions:
             id-token: write
@@ -23,8 +23,8 @@ jobs:
                     enable-AzPSSession: true
             
             - shell: pwsh
-              name: Create All Users & Grant Permissions & Licenses
+              name: Management Groups and Subscriptions Provisioning
+              working-directory: ./scripts
               run: |
-                $passwordPrefix = "${{ secrets.PW_PREFIX }}"
-                ./scripts/provision-hackathon-participants.ps1 -passwordPrefix $(ConvertTo-SecureString -String $passwordPrefix -AsPlainText -Force)
+                ./provision-management-groups-and-subscriptions.ps1
             

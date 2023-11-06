@@ -1,0 +1,127 @@
+{
+    "id": "1563f3ae-2c27-4ebc-b724-1804c38524f1",
+    "type": "managementGroup",
+    "name": "Tatooine",
+    "children": [
+        {
+            "id": "28c4d775-5307-406d-a88e-189b5e33e03e",
+            "type": "managementGroup",
+            "name": "Wookies",
+            "children": [
+                {
+                    "id": "613cefef-fdb2-4aa6-8225-2c3fac3dec2f",
+                    "type": "subscription",
+                    "name": "ME-MngEnvMCAP168626-bgrozoiu-1"
+                }
+            ]
+        },
+        {
+            "id": "6b8c9b71-3ca7-435f-a43e-ae55396986da",
+            "type": "managementGroup",
+            "name": "Arconas",
+            "children": [
+                {
+                    "id": "f546d538-01b7-4570-88ba-fc51cc6b61ac",
+                    "type": "subscription",
+                    "name": "ME-MngEnvMCAP168626-bgrozoiu-2"
+                }
+            ]
+        },
+        {
+            "id": "036c3db1-042b-4f29-997f-64e5feb2b6c4",
+            "type": "managementGroup",
+            "name": "TuskenRaiders",
+            "children": [
+                {
+                    "id": "a1c49950-1900-406e-8f64-09ab4e0fc86a",
+                    "type": "subscription",
+                    "name": "ME-MngEnvMCAP168626-bgrozoiu-3"
+                }
+            ]
+        },
+        {
+            "id": "b44cceac-8f4d-4958-930c-133de5779782",
+            "type": "managementGroup",
+            "name": "Gungans",
+            "children": [
+                {
+                    "id": "c6e8505d-5476-4446-ae8c-a6b896339db3",
+                    "type": "subscription",
+                    "name": "ME-MngEnvMCAP168626-bgrozoiu-4"
+                }
+            ]
+        },
+        {
+            "id": "ee85b108-4a51-462e-b7e8-fc3f2eff562b",
+            "type": "managementGroup",
+            "name": "Kyuzos",
+            "children": [
+                {
+                    "id": "28c5fc8d-980e-4b48-9044-f927757113d1",
+                    "type": "subscription",
+                    "name": "ME-MngEnvMCAP168626-bgrozoiu-5"
+                }
+            ]
+        },
+        {
+            "id": "b1696be1-605c-42dd-9799-17399f23c6f5",
+            "type": "managementGroup",
+            "name": "Snivvians",
+            "children": [
+                {
+                    "id": "955684df-a4bc-4d6e-a4ec-5f2df5c5b54b",
+                    "type": "subscription",
+                    "name": "ME-MngEnvMCAP168626-bgrozoiu-6"
+                }
+            ]
+        },
+        {
+            "id": "af801ba4-e6ed-4200-b086-74770c6fd649",
+            "type": "managementGroup",
+            "name": "Rodians",
+            "children": [
+                {
+                    "id": "a130bdfe-b3db-4b2c-bc99-01f44d7e657e",
+                    "type": "subscription",
+                    "name": "ME-MngEnvMCAP168626-bgrozoiu-7"
+                }
+            ]
+        },
+        {
+            "id": "bea96c8f-9532-43ce-b568-3211c698a07a",
+            "type": "managementGroup",
+            "name": "Klatoonians",
+            "children": [
+                {
+                    "id": "e89c90e4-9342-4dae-87a6-8bac02578b58",
+                    "type": "subscription",
+                    "name": "ME-MngEnvMCAP168626-bgrozoiu-8"
+                }
+            ]
+        },
+        {
+            "id": "f4311c51-89c5-48f4-b507-b3397da7da66",
+            "type": "managementGroup",
+            "name": "Vurks",
+            "children": [
+                {
+                    "id": "947bf62f-bccd-41e4-91f6-d82b44f2ca9a",
+                    "type": "subscription",
+                    "name": "ME-MngEnvMCAP168626-bgrozoiu-9"
+                }
+            ]
+        },
+        {
+            "id": "cb2084e9-4fdb-4d7d-ab73-4dca81d36f02",
+            "type": "managementGroup",
+            "name": "KelDors",
+            "children": [
+                {
+                    "id": "c0ff9928-cf01-4a46-a30e-3603f25b3cd4",
+                    "type": "subscription",
+                    "name": "ME-MngEnvMCAP168626-bgrozoiu-10"
+                }
+            ]
+        }
+    ]
+}

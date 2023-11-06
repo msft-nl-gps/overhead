@@ -12,14 +12,17 @@
         "EntraRoles": [
             {
                 "Name": "Global Administrator",
-                "TemplateId": "62e90394-69f5-4237-9190-012177145e10"
+                "TemplateId": "62e90394-69f5-4237-9190-012177145e10",
+                "DurationInDays": 0
             }
         ],
         "AzureResourcesRoles": [
             {
                 "ManagementGroups": [
                     {
-                        "Name": "Tatooine"
+                        "Name": "Tatooine",
+                        "TemplateId": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+                        "DurationInDays": 0
                     }
                 ]
             }
@@ -44,7 +47,9 @@
             {
                 "ManagementGroups": [
                     {
-                        "Name": "Wookies"
+                        "Name": "Wookies",
+                        "TemplateId": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+                        "DurationInDays": 1
                     }
                 ]
             }
@@ -66,7 +71,9 @@
             {
                 "ManagementGroups": [
                     {
-                        "Name": "Arconas"
+                        "Name": "Arconas",
+                        "TemplateId": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+                        "DurationInDays": 1
                     }
                 ]
             }
@@ -88,7 +95,9 @@
             {
                 "ManagementGroups": [
                     {
-                        "Name": "TuskenRaiders"
+                        "Name": "TuskenRaiders",
+                        "TemplateId": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+                        "DurationInDays": 1
                     }
                 ]
             }
@@ -110,7 +119,9 @@
             {
                 "ManagementGroups": [
                     {
-                        "Name": "Gungans"
+                        "Name": "Gungans",
+                        "TemplateId": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+                        "DurationInDays": 1
                     }
                 ]
             }
@@ -132,7 +143,9 @@
             {
                 "ManagementGroups": [
                     {
-                        "Name": "Kyuzos"
+                        "Name": "Kyuzos",
+                        "TemplateId": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+                        "DurationInDays": 1
                     }
                 ]
             }
@@ -154,7 +167,9 @@
             {
                 "ManagementGroups": [
                     {
-                        "Name": "Snivvians"
+                        "Name": "Snivvians",
+                        "TemplateId": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+                        "DurationInDays": 1
                     }
                 ]
             }
@@ -176,7 +191,9 @@
             {
                 "ManagementGroups": [
                     {
-                        "Name": "Rodians"
+                        "Name": "Rodians",
+                        "TemplateId": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+                        "DurationInDays": 1
                     }
                 ]
             }
@@ -198,7 +215,9 @@
             {
                 "ManagementGroups": [
                     {
-                        "Name": "Klatoonians"
+                        "Name": "Klatoonians",
+                        "TemplateId": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+                        "DurationInDays": 1
                     }
                 ]
             }
@@ -220,7 +239,9 @@
             {
                 "ManagementGroups": [
                     {
-                        "Name": "Vurks"
+                        "Name": "Vurks",
+                        "TemplateId": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+                        "DurationInDays": 1
                     }
                 ]
             }
@@ -242,7 +263,9 @@
             {
                 "ManagementGroups": [
                     {
-                        "Name": "KelDors"
+                        "Name": "KelDors",
+                        "TemplateId": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+                        "DurationInDays": 1
                     }
                 ]
             }
