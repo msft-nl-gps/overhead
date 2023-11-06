@@ -27,13 +27,13 @@ function processEntraRole ($groupName, $role) {
             action           = "AdminAssign"
             justification    = "Hackathon Provisioning - Automated pipeline"
             roleDefinitionId = $role.templateId
+            appScopeId       = "/"
             directoryScopeId = "/"
             principalId      = $groupId
-            groupId          = $groupId
             scheduleInfo     = @{
                 startDateTime = Get-Date
                 expiration    = @{
-                    type        = "noExpiration"
+                    type = "noExpiration"
                 }
             }   
         }
@@ -43,9 +43,9 @@ function processEntraRole ($groupName, $role) {
             action           = "AdminAssign"
             justification    = "Hackathon Provisioning - Automated pipeline"
             roleDefinitionId = $role.templateId
+            appScopeId       = "/"
             directoryScopeId = "/"
             principalId      = $groupId
-            groupId          = $groupId
             scheduleInfo     = @{
                 startDateTime = Get-Date
                 expiration    = @{
