@@ -30,6 +30,7 @@ function provisionGroup ($group) {
             mailEnabled     = $false
             mailNickname    = $entraGroupToProvision.DisplayName
             securityEnabled = $true
+            isAssignableToRole = $true
         }
         $createdGroup = Invoke-RestMethod -Uri $("https://graph.microsoft.com/" + $graphApiVersion + "/" + $groups_api_resource) -Headers @{'Authorization' = 'Bearer ' + $authToken.token } -ContentType 'application/json' -Method POST -Body $($body | ConvertTo-Json)
         Write-Host ("Created group: [{0}] with id: [{1}]" -f $createdGroup.displayName, $createdGroup.id)
