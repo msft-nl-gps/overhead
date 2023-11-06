@@ -64,6 +64,11 @@ function processEntraRole ($groupName, $role) {
         -Body $($bodyRoleAssignment | ConvertTo-Json -Depth 3)
 }
 
+function processAzureRole ($groupName, $mg){
+    $groupId = (getEntraGroupByName $groupName).value[0].id
+    #TBD
+}
+
 foreach ($group in $GroupsEntitlements) {
     Write-Output("------------------------------------------------------")
     Write-Output ("Processing permissions for group {0}" -f $group.DisplayName)
@@ -79,6 +84,10 @@ foreach ($group in $GroupsEntitlements) {
     }
     if ($group.AzureResourcesRoles) {
         Write-Output ("Azure Resources Roles found for group [{0}]" -f $group.DisplayName)
+        foreach ($ManagementGroup in $group.AzureResourcesRoles.ManagementGroups) {
+            Write-Output ("Processing Role Template Id [{0}] over Management Group [{1}]" -f $ManagementGroup.TemplateId, $ManagementGroup.Name)
+            processAzureRole -groupName $group.DisplayName -mg $ManagementGroup
+        }
     }
     else {
         Write-Output ("No Azure Resources Roles found for group [{0}]" -f $group.DisplayName)
